@@ -27,7 +27,7 @@
 		<script src="https://kit.fontawesome.com/26bde3c27f.js" crossorigin="anonymous"></script>
 
 		<!-- Custom stlylesheet -->
-		<link type="text/css" rel="stylesheet" href="assets/css/style2.css"/>
+		<link type="text/css" rel="stylesheet" href="./assets/css/style2.css"/>
 
 
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -38,7 +38,7 @@
 		<![endif]-->
 
     </head>
-	<body>
+	<body>	
 		<!-- HEADER -->
 		<header>
 			<!-- TOP HEADER -->
@@ -172,11 +172,11 @@
 				<!-- row -->
 				<div class="row">
 					<div class="col-md-12">
-						<h3 class="breadcrumb-header">회원 정보 변경</h3>
+						<h3 class="breadcrumb-header">Post Update</h3>
 						<ul class="breadcrumb-tree">
 							<li><a href="#">Home</a></li>
 							<!-- 홈 클릭시 메인화면으로 이동 -->
-							<li class="active">회원 정보 변경</li>
+							<li class="active">Post Update</li>
 						</ul>
 					</div>
 				</div>
@@ -186,6 +186,7 @@
 		</div>
 		<!-- /BREADCRUMB -->
 
+<form action="BoardWriteCon" method="post" enctype="multipart/form-data">
 		<!-- SECTION -->
 		<div class="section">
 			<!-- container -->
@@ -195,42 +196,37 @@
 
 					<div class="col-md-7">
 						<div class="section-title text-center">
-							<h3 class="title">사진 등록 및 변경</h3>
+							<h3 class="title">사진 등록</h3>
 						</div>
 						<div class="filebox-box">
 							<div class="filebox">
 								<input class="upload-name" value="카페 외관 파일 선택" disabled="disabled">
 								<label for="ex_filename">업로드</label>
-								<input type="file" id="ex_filename" class="upload-hidden">
-								<label for="ex_filename">등록</label>
+								<input type="file" name="file1" id="ex_filename" class="">
 							</div>
 						
 							<div class="filebox">
 								<input class="upload-name" value="카페 내부 파일 선택" disabled="disabled">
 								<label for="ex_filename">업로드</label>
-								<input type="file" id="ex_filename" class="upload-hidden">
-								<label for="ex_filename">등록</label>
+								<input type="file" name="file2" id="ex_filename" class="">
 							</div>
 						
 							<div class="filebox">
 								<input class="upload-name" value="메뉴 파일 선택" disabled="disabled">
 								<label for="ex_filename">업로드</label>
-								<input type="file" id="ex_filename" class="upload-hidden">
-								<label for="ex_filename">등록</label>
+								<input type="file" name="file3" id="ex_filename" class="">
 							</div>
 						
 							<div class="filebox">
 								<input class="upload-name" value="기타 사진" disabled="disabled">
 								<label for="ex_filename">업로드</label>
-								<input type="file" id="ex_filename" class="upload-hidden">
-								<label for="ex_filename">등록</label>
+								<input type="file"  name="file4" id="ex_filename" class="">
 							</div>
 						
 							<div class="filebox">
 								<input class="upload-name" value="기타 사진" disabled="disabled">
 								<label for="ex_filename">업로드</label>
-								<input type="file" id="ex_filename" class="upload-hidden">
-								<label for="ex_filename">등록</label>
+								<input type="file" name="file5" id="ex_filename" class="">
 							</div>
 						</div>
 
@@ -259,7 +255,7 @@
 						<div class="post-hashtag">
 							<textarea class="input" placeholder="해시태그(#)를 입력해주세요."></textarea>
 						</div>
-						<a href="#" class="primary-btn order-submit">post upload</a>
+						<button type="submit" value=""></button>
 						<!-- /Order notes -->
 						
 					</div>
@@ -270,6 +266,8 @@
 			<!-- /container -->
 		</div>
 		<!-- /SECTION -->		
+</form>
+
 
 		<!-- FOOTER -->
 		<footer id="footer">
