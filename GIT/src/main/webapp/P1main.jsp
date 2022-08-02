@@ -1,3 +1,4 @@
+<%@page import="com.smhrd.model.Member"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -39,6 +40,8 @@
 		<![endif]-->
 
 </head>
+<% HttpSession session1 = request.getSession();
+Member loginMember = (Member)session.getAttribute("loginMember");%>
 
 <body>
 	<!-- HEADER -->
@@ -46,14 +49,26 @@
 		<!-- TOP HEADER -->
 		<div id="top-header">
 			<div class="container">
-				<ul class="header-links pull-left">
+				
+				<!-- <ul class="header-links pull-left">
 					<li><a href="#"><i class="fa fa-phone"></i> 062-655-1616</a></li>
 					<li><a href="#"><i class="fa fa-envelope-o"></i> cfy0502@email.com</a></li>
 					<li><a href="#"><i class="fa fa-map-marker"></i> 동구 예술길 31-15</a></li>
-				</ul>
+				</ul> -->
+				
 				<ul class="header-links pull-right">
-					<li><a href="#"><i class="fa fa-user-o"></i> My Account</a></li>
+					<li><a onclick="location.href='P3userinfo.jsp';" style="cursor:pointer"> My Account <i class="fa fa-user-o"></i></a></li>
 				</ul>
+				
+				<ul class="header-links pull-right">
+					<li><a onclick="location.href='login.jsp';" style="cursor:pointer"><i class=""  &nbsp;></i> logout </a></li &nbsp;>
+				
+				<ul class="header-links pull-right">
+					<li &nbsp;><a onclick="location.href='P3postupload.jsp';" style="cursor:pointer"><i class=""></i> Post+ </a></li>
+				</ul>
+				
+				</ul>
+				
 			</div>
 		</div>
 		<!-- /TOP HEADER -->

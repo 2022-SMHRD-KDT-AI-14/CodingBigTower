@@ -13,7 +13,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="Content-Type" content="text/html;">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="assets/css/Style.css">
+<link rel="stylesheet" href="assets/css/Style.css?ver=1">
 </head>
 <%
 /* String email = (String) request.getAttribute("email");
@@ -41,22 +41,13 @@ Member joinMember =  (Member)request.getAttribute("joinMember");
 						<!-- 회원가입 폼 2-->
 			<form action="KeyCon?email=<%=joinMember.getEmail() %>" id="register" class="input-group">
 
-					<td><br><br>
-						<!-- <h4 align="center">찾으시는 취향 키워드를 선택해주세요.<br>
-						원하시는 카페를 찾아드릴게요!</h4> -->
-					</td><br><br>
-					<td>
-					<!-- 뷰맛집 <input type="checkbox" name="keyword" value="niceview"><br> 
-					스터디 <input type="checkbox" name="keyword" value="study"><br> 
-					사진맛집 <input type="checkbox" name="keyword" value="photozone"> -->
-					<br></td><br><br><br><br><br><br>
+					<br><br>
+					<br><br>
+					<br><br><br><br><br><br><br>
 				<br>
-				<button class="submit" type="button" onclick="location.href='main.jsp' ">로그인하기</button>
+				<button class="submit" type="button" onclick="location.href='login.jsp' ">로그인하기</button>
 			</form>
 
-		<!-- 	<button type="submit" class="submit">로그인하기</button> -->
-	</div>
-	</form>
 </div>
 <footer class="footer" align="center">
 	<div id="serviceNameArea">
@@ -68,38 +59,8 @@ Member joinMember =  (Member)request.getAttribute("joinMember");
 			&nbsp; 위치 &nbsp; Cafe Fit You Lite &nbsp; 연락처 업로드 & 사용자</li>
 		<li>댄스 &nbsp; 식음료 &nbsp; 집 및 정원 &nbsp; 음악 시각 &nbsp; 예술</li>
 		<li>한국어 ▽ 2022 Cafe Fit You from Mata</li>
-		<!-- <li><a href='tel:010-XXXX-XXXX'>고객센터</a></li> -->
 	</ul>
 </div>
+
 <script>
-	/* var x = document.getElementById("login");
-	var y = document.getElementById("register");
-	var z = document.getElementById("btn");
-
-	function login() {
-		x.style.left = "50px";
-		y.style.left = "450px";
-		z.style.left = "0";
-	}
-
-	function register() {
-		x.style.left = "-400px";
-		y.style.left = "50px";
-		z.style.left = "110px";
-	}
-	function CheckText() {
-		var kind2_etc = document.getElementById("kind2_etc");
-		if (document.getElementById("kind2").value == "other") {
-			if (navigator.appName.indexOf("Microsoft") > -1) {
-				var visible = 'block';
-			} else {
-				var visible = 'table-row';
-			}
-			kind2_etc.style.display = visible;
-		} else {
-			kind2_etc.style.display = 'none';
-		}
-	} */
 </script>
-</body>
-</html>

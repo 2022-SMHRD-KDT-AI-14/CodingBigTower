@@ -1,14 +1,21 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR" isELIgnored="false"%>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta charset="utf-8">
+	<meta charset="EUC-KR">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link
+		href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap"
+		rel="stylesheet">
 
-		<title>Electro - HTML Ecommerce Template</title>
+
+		<title>My post</title>
 
 		<!-- Google font -->
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
@@ -39,6 +46,7 @@
 
     </head>
 	<body>
+
 		<!-- HEADER -->
 		<header>
 			<!-- TOP HEADER -->
@@ -47,7 +55,7 @@
 					<ul class="header-links pull-left">
 						<li><a href="#"><i class="fa fa-phone"></i> 062-655-1616</a></li>
 						<li><a href="#"><i class="fa fa-envelope-o"></i> cfy0502@email.com</a></li>
-						<li><a href="#"><i class="fa fa-map-marker"></i> ë™êµ¬ ì˜ˆìˆ ê¸¸ 31-15</a></li>
+						<li><a href="#"><i class="fa fa-map-marker"></i> µ¿±¸ ¿¹¼ú±æ 31-15</a></li>
 					</ul>
 					<ul class="header-links pull-right">						
 						<li><a href="#"><i class="fa fa-user-o"></i> My Account</a></li>
@@ -79,7 +87,7 @@
 									<select class="input-select">
 										<option value="0">Cafe</option>
 										<option value="1">User</option>
-										<option value="2">ì—…ë°ì´íŠ¸ ì˜ˆì •</option>
+										<option value="2">¾÷µ¥ÀÌÆ® ¿¹Á¤</option>
 									</select>
 									<input class="input" placeholder="Search here">
 									<button class="search-btn">Search</button>
@@ -95,7 +103,7 @@
 								<div>
 									<a href="#">
 										<i class="fa-regular fa-heart"></i>
-										<!-- <i class="fa-solid fa-heart"></i> : ìƒ‰ê¹” ì¹ í•´ì§„ í•˜íŠ¸ ì•„ì´ì½˜ -->
+										<!-- <i class="fa-solid fa-heart"></i> : »ö±ò Ä¥ÇØÁø ÇÏÆ® ¾ÆÀÌÄÜ -->
 										<span>My Bias</span>
 										<div class="qty">+</div>
 									</a>
@@ -106,7 +114,7 @@
 								<div class="dropdown">
 									<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
 										<i class="fa-regular fa-bookmark"></i>
-										<!-- <i class="fa-solid fa-bookmark"></i>  : ìƒ‰ê¹” ì¹ í•´ì§„ ë¶ë§ˆí¬ ì•„ì´ì½˜ -->
+										<!-- <i class="fa-solid fa-bookmark"></i>  : »ö±ò Ä¥ÇØÁø ºÏ¸¶Å© ¾ÆÀÌÄÜ -->
 										<span>Bookmark</span>
 										<div class="qty">+</div>
 									</a>
@@ -117,8 +125,8 @@
 													<img src="https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20220414_247%2F16499247554904FiaY_JPEG%2FIMG_6060.jpg" alt="">
 												</div>
 												<div class="product-body">
-													<h5 class="cafe-name"><a href="#">í”¼ìž ë§›ì§‘</a></h5>
-													<h4 class="hashtag">#í•´ì‹œíƒœê·¸</h4>
+													<h5 class="cafe-name"><a href="#">ÇÇÀÚ ¸ÀÁý</a></h5>
+													<h4 class="hashtag">#ÇØ½ÃÅÂ±×</h4>
 												</div>
 												<button class="delete"><i class="fa fa-close"></i></button>
 											</div>
@@ -128,8 +136,8 @@
 													<img src="https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20220414_247%2F16499247554904FiaY_JPEG%2FIMG_6060.jpg" alt="">
 												</div>
 												<div class="product-body">
-													<h5 class="cafe-name"><a href="#">í”¼ìž ë§›ì§‘</a></h5>
-													<h4 class="hashtag">#í•´ì‹œíƒœê·¸</h4>
+													<h5 class="cafe-name"><a href="#">ÇÇÀÚ ¸ÀÁý</a></h5>
+													<h4 class="hashtag">#ÇØ½ÃÅÂ±×</h4>
 												</div>
 												<button class="delete"><i class="fa fa-close"></i></button>
 											</div>
@@ -172,8 +180,8 @@
 						<ul class="breadcrumb-tree">
 							<li><a href="#">Home</a></li>
 							<li><a href="#">All Cafe</a></li>
-							<li><a href="#">ë°ì´íŠ¸</a></li>
-							<li class="active">ë™ëª…ë™ ë§›ì§‘ ê²Œë”ë§</li>
+							<li><a href="#">µ¥ÀÌÆ®</a></li>
+							<li class="active">µ¿¸íµ¿ ¸ÀÁý °Ô´õ¸µ</li>
 						</ul>
 					</div>
 				</div>
@@ -194,7 +202,7 @@
 						<div id="product-main-img">
 							<div class="product-preview">
 								<div class="product-label">
-									<span class="new">ì™¸ë¶€ ì‚¬ì§„</span>
+									<span class="new">¿ÜºÎ »çÁø</span>
 								</div>
 								<img src="https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20220414_258%2F1649924755278Vn3qy_JPEG%2FIMG_5975.jpg" alt="">
 
@@ -202,7 +210,7 @@
 
 							<div class="product-preview">
 								<div class="product-label">
-									<span class="new">ë‚´ë¶€ ì‚¬ì§„</span>
+									<span class="new">³»ºÎ »çÁø</span>
 								</div>
 								<img src="https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20220414_202%2F1649924754676LPwTl_JPEG%2FDSC00940.jpg" alt="">
 
@@ -210,7 +218,7 @@
 
 							<div class="product-preview">
 								<div class="product-label">
-									<span class="new">ë©”ì¸ë©”ë‰´</span>
+									<span class="new">¸ÞÀÎ¸Þ´º</span>
 								</div>
 								<img src="https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20220414_141%2F1649924755073vEWIB_JPEG%2FIMG_6065.jpg" alt="">
 
@@ -261,17 +269,17 @@
 							<h2 class="cafe-name">Gathering</h2>
 							<div>
 								<div class="cafe-rating">
-									ë„¤ì´ë²„ í‰ì  : 4.5<i class="fa fa-star"></i>
-									 / ì¹´ì¹´ì˜¤ í‰ì  : 4.5<i class="fa fa-star"></i>
+									³×ÀÌ¹ö ÆòÁ¡ : 4.5<i class="fa fa-star"></i>
+									 / Ä«Ä«¿À ÆòÁ¡ : 4.5<i class="fa fa-star"></i>
 								</div>
 							</div>
 							<div>
-								<h3 class="username">ê²Œë”ë§ ì‚¬ìž¥ ì•„ë‹˜<p class="user-title">ê²Œë”ë§ì‚¬ìž¥</p></h3>
+								<h3 class="username">°Ô´õ¸µ »çÀå ¾Æ´Ô<p class="user-title">°Ô´õ¸µ»çÀå</p></h3>
 							</div>
 
 							<div>
 								<p class="post-content-text">
-								í”¼ìžê°€ ê¹”ë”í•˜ê³  ì¹´íŽ˜ê°€ ë§›ìžˆì–´ì—¬
+								ÇÇÀÚ°¡ ±ò²ûÇÏ°í Ä«Æä°¡ ¸ÀÀÖ¾î¿©
 								laskdfjoaisdjfalksdfja;skd
 								fas'podfjsalkdfj;lkdsjf'asd
 								fasdpofjaslkdfjkasdf
@@ -286,8 +294,8 @@
 
 							<ul class="product-links">
 								<li>hashtags:</li>
-								<li><a href="#">#ê¹”ë”í•¨</a></li>
-								<li><a href="#">#ë§›ìžˆëŠ”ë””ì €íŠ¸</a></li>
+								<li><a href="#">#±ò²ûÇÔ</a></li>
+								<li><a href="#">#¸ÀÀÖ´ÂµðÀúÆ®</a></li>
 							</ul>
 
 							<ul class="product-links">
@@ -324,40 +332,40 @@
 											<div class="Cafe-info">
 												<table class="table-description">
 													<tr>
-														<td class="tg-01">ë§¤ìž¥ ì†Œê°œ</td>
+														<td class="tg-01">¸ÅÀå ¼Ò°³</td>
 														<td class="tg-02"><p style="white-space:normal;">
-															40ë…„ ì´ìƒëœ ì£¼íƒì„ ê°œì¡°í•˜ì˜€ê³ ,<br>
-															ì•„ëŠ‘í•˜ê³  ì„¸ë ¨ëœ ì¸í…Œë¦¬ì–´ì™€ ì •ì›ì˜ ì¡°í•©ì´<br>
-															ë§Œë“¤ì–´ë‚´ëŠ” ê³µê°„ì´ ì°¸ ì˜ˆì©ë‹ˆë‹¤.<br>
+															40³â ÀÌ»óµÈ ÁÖÅÃÀ» °³Á¶ÇÏ¿´°í,<br>
+															¾Æ´ÁÇÏ°í ¼¼·ÃµÈ ÀÎÅ×¸®¾î¿Í Á¤¿øÀÇ Á¶ÇÕÀÌ<br>
+															¸¸µé¾î³»´Â °ø°£ÀÌ Âü ¿¹»Þ´Ï´Ù.<br>
 															<br>
-															ë¸ŒëŸ°ì¹˜,íŒŒìŠ¤íƒ€,í”¼ìžë¥¼<br>
-															ë‹¤ì–‘í•œ ë°©ì‹ìœ¼ë¡œ í•´ì„í•´ì„œ<br>
-															íŠ¹ë³„í•œ ë©”ë‰´ê°€ ë§ŽìŠµë‹ˆë‹¤.<br>
+															ºê·±Ä¡,ÆÄ½ºÅ¸,ÇÇÀÚ¸¦<br>
+															´Ù¾çÇÑ ¹æ½ÄÀ¸·Î ÇØ¼®ÇØ¼­<br>
+															Æ¯º°ÇÑ ¸Þ´º°¡ ¸¹½À´Ï´Ù.<br>
 															<br>
-															ê·¸ëž˜ì„œ 4ë…„ ë™ì•ˆ<br>
-															ê¾¸ì¤€ížˆ ì‚¬ëž‘ ë°›ê³  ìžˆëŠ”<br>
-															ë™ëª…ë™ í•«í”Œ ê²Œë”ë§ìž…ë‹ˆë‹¤!</p></td>
+															±×·¡¼­ 4³â µ¿¾È<br>
+															²ÙÁØÈ÷ »ç¶û ¹Þ°í ÀÖ´Â<br>
+															µ¿¸íµ¿ ÇÖÇÃ °Ô´õ¸µÀÔ´Ï´Ù!</p></td>
 													 </tr>					
 															
 														<tr>
-														   <td class="tg-01">ë§¤ìž¥ ì˜¤í”ˆ ì‹œê°„</td>
+														   <td class="tg-01">¸ÅÀå ¿ÀÇÂ ½Ã°£</td>
 														   <td class="tg-02">11:00 ~ 00:00</td>
 														</tr>														
 														<tr>
-														   <td class="tg-01">ì‚¬ì´íŠ¸ URL(ì§€ë„)</td>
-														   <td class="tg-02"><a href="https://map.naver.com/v5/search/%EB%8F%99%EB%AA%85%EB%8F%99%20%EA%B2%8C%EB%8D%94%EB%A7%81/place/1226619821?c=14129020.5725936,4184144.9438398,15,0,0,0,dh&isCorrectAnswer=true">ê²Œë”ë§</a></td>
+														   <td class="tg-01">»çÀÌÆ® URL(Áöµµ)</td>
+														   <td class="tg-02"><a href="https://map.naver.com/v5/search/%EB%8F%99%EB%AA%85%EB%8F%99%20%EA%B2%8C%EB%8D%94%EB%A7%81/place/1226619821?c=14129020.5725936,4184144.9438398,15,0,0,0,dh&isCorrectAnswer=true">°Ô´õ¸µ</a></td>
 														</tr>
 														<tr>
-														   <td class="tg-01">ì• ê²¬ë™ë°˜</td>
-														   <td class="tg-02">ì •ë³´ ì—†ìŒ</td>
+														   <td class="tg-01">¾Ö°ßµ¿¹Ý</td>
+														   <td class="tg-02">Á¤º¸ ¾øÀ½</td>
 														</tr>
 														<tr>
-														   <td class="tg-01">ë…¸í‚¤ì¦ˆì¡´</td>
-														   <td class="tg-02">ì •ë³´ ì—†ìŒ</td>
+														   <td class="tg-01">³ëÅ°ÁîÁ¸</td>
+														   <td class="tg-02">Á¤º¸ ¾øÀ½</td>
 														</tr>
 														<tr>
-														   <td class="tg-01">ì£¼ì†Œ</td>
-														   <td class="tg-02">ê´‘ì£¼ ë™êµ¬ ë™ëª…ë™ 71-1</td>
+														   <td class="tg-01">ÁÖ¼Ò</td>
+														   <td class="tg-02">±¤ÁÖ µ¿±¸ µ¿¸íµ¿ 71-1</td>
 														</tr>
 												</table>												
 											</div>									
@@ -377,7 +385,7 @@
 														<th class="th-01-01">Price</th>
 													</tr>
 													<tr>
-														<td class="tg-03">ì“°ë¦¬ìƒ· ì•„ë©”ë¦¬ì¹´ë…¸</td>
+														<td class="tg-03">¾²¸®¼¦ ¾Æ¸Þ¸®Ä«³ë</td>
 														<td class="tg-04">4,500</td>
 													 </tr>																														
 												</table>												
@@ -563,7 +571,7 @@
 		</div>
 		<!-- /SECTION -->
 
-		<!-- ìµœëŒ€ 4ê°œì˜ í•­ë³µì„ ì¶”ê°€í• ê²ƒ -->
+		<!-- ÃÖ´ë 4°³ÀÇ Ç×º¹À» Ãß°¡ÇÒ°Í -->
 		<!-- Section -->
 		<div class="section">
 			<!-- container -->
@@ -585,8 +593,8 @@
 							</div>
 							<div class="product-body">
 								<p class="product-category">Cafe Name</p>
-								<h3 class="cafe-name"><a href="#">ì˜¨í´ë¼ìš°ë“œë‚˜ì¸</a></h3>
-								<h4 class="username">ì¤€ì˜ë‹˜ <p class="user-title">ë‹¤ì´ì•„</p></h4>
+								<h3 class="cafe-name"><a href="#">¿ÂÅ¬¶ó¿ìµå³ªÀÎ</a></h3>
+								<h4 class="username">ÁØ¿µ´Ô <p class="user-title">´ÙÀÌ¾Æ</p></h4>
 								<div class="cafe-rating">
 									<a>4.5</a><i class="fa fa-star"></i>
 								</div>
@@ -596,7 +604,7 @@
 								</div>
 							</div>
 							<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa-solid fa-magnifying-glass"></i> ìžì„¸ížˆ ë³´ê¸°</button>
+												<button class="add-to-cart-btn"><i class="fa-solid fa-magnifying-glass"></i> ÀÚ¼¼È÷ º¸±â</button>
 											</div>
 						</div>
 					</div>
@@ -613,8 +621,8 @@
 							</div>
 							<div class="product-body">
 								<p class="product-category">Cafe Name</p>
-								<h3 class="cafe-name"><a href="#">í‹°ì•—</a></h3>
-								<h4 class="username">ì•Œë§ˆ<p class="user-title">ì½”ë“œê°€ ê°€ìž¥ ì‰¬ì› ì–´ìš”</p></h4>
+								<h3 class="cafe-name"><a href="#">Æ¼¾Ñ</a></h3>
+								<h4 class="username">¾Ë¸¶<p class="user-title">ÄÚµå°¡ °¡Àå ½¬¿ü¾î¿ä</p></h4>
 								<div class="cafe-rating">
 									<a>4.5</a><i class="fa fa-star"></i>
 								</div>
@@ -624,7 +632,7 @@
 								</div>
 							</div>
 							<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa-solid fa-magnifying-glass"></i> ìžì„¸ížˆ ë³´ê¸°</button>
+												<button class="add-to-cart-btn"><i class="fa-solid fa-magnifying-glass"></i> ÀÚ¼¼È÷ º¸±â</button>
 											</div>
 						</div>
 					</div>
@@ -640,8 +648,8 @@
 							</div>
 							<div class="product-body">
 								<p class="product-category">Cafe Name</p>
-								<h3 class="cafe-name"><a href="#">íŒŒíŠ¸ì˜¤ë¸ŒëŸ°ë˜</a></h3>
-								<h4 class="username">ë§Œë“ì´ <p class="user-title">ë¸Œë¡ ì¦ˆ</p></h4>
+								<h3 class="cafe-name"><a href="#">ÆÄÆ®¿Àºê·±´ø</a></h3>
+								<h4 class="username">¸¸µæÀÌ <p class="user-title">ºê·ÐÁî</p></h4>
 								<div class="cafe-rating">
 									<a>4.5</a><i class="fa fa-star"></i>
 								</div>
@@ -651,7 +659,7 @@
 								</div>
 							</div>
 							<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa-solid fa-magnifying-glass"></i> ìžì„¸ížˆ ë³´ê¸°</button>
+												<button class="add-to-cart-btn"><i class="fa-solid fa-magnifying-glass"></i> ÀÚ¼¼È÷ º¸±â</button>
 											</div>
 						</div>
 					</div>
@@ -665,8 +673,8 @@
 							</div>
 							<div class="product-body">
 								<p class="product-category">Cafe Name</p>
-								<h3 class="cafe-name"><a href="#">ê°¸ë˜ì—ì¹´íŽ˜</a></h3>
-								<h4 class="username">ë¶„ëŒ€ìž¥ <p class="user-title">ë¶„ë…¸ì¡°ì ˆìž˜í•´</p></h4>
+								<h3 class="cafe-name"><a href="#">°¼¶Ç¿¡Ä«Æä</a></h3>
+								<h4 class="username">ºÐ´ëÀå <p class="user-title">ºÐ³ëÁ¶ÀýÀßÇØ</p></h4>
 								<div class="cafe-rating">
 									<a>2</a><i class="fa fa-star"></i>
 								</div>
@@ -676,7 +684,7 @@
 								</div>
 							</div>
 							<div class="add-to-cart">
-								<button class="add-to-cart-btn"><i class="fa-solid fa-magnifying-glass"></i> ìžì„¸ížˆ ë³´ê¸°</button>
+								<button class="add-to-cart-btn"><i class="fa-solid fa-magnifying-glass"></i> ÀÚ¼¼È÷ º¸±â</button>
 							</div>
 						</div>
 					</div>
@@ -704,7 +712,7 @@
 								<ul class="footer-links">
 									<li><a href="#"><i class="fa fa-phone"></i> 062-655-1616</a></li>
 						<li><a href="#"><i class="fa fa-envelope-o"></i> cfy0502@email.com</a></li>
-						<li><a href="#"><i class="fa fa-map-marker"></i> ë™êµ¬ ì˜ˆìˆ ê¸¸ 31-15</a></li>
+						<li><a href="#"><i class="fa fa-map-marker"></i> µ¿±¸ ¿¹¼ú±æ 31-15</a></li>
 								</ul>
 							</div>
 						</div>
@@ -713,11 +721,11 @@
 							<div class="footer">
 								<h3 class="footer-title">Cafe</h3>
 								<ul class="footer-links">
-									<li><a href="#">ë™  êµ¬</a></li>
-									<li><a href="#">ë¶  êµ¬</a></li>
-									<li><a href="#">ë‚¨  êµ¬</a></li>
-									<li><a href="#">ì„œ  êµ¬</a></li>
-									<li><a href="#">ê´‘ì‚°êµ¬</a></li>
+									<li><a href="#">µ¿  ±¸</a></li>
+									<li><a href="#">ºÏ  ±¸</a></li>
+									<li><a href="#">³²  ±¸</a></li>
+									<li><a href="#">¼­  ±¸</a></li>
+									<li><a href="#">±¤»ê±¸</a></li>
 								</ul>
 							</div>
 						</div>

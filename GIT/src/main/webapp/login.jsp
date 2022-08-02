@@ -17,7 +17,6 @@
 <%
 String email = (String) request.getAttribute("email");
 String nick = (String) request.getAttribute("nick");
-
 %>
 <body>
 
@@ -389,6 +388,7 @@ String nick = (String) request.getAttribute("nick");
 		<div class="form-regi">
 
 			<div class="button-wrap">
+				<div id="btn"></div>
 				<div class="Logo">
 					<img src="images/LogoL.png" alt="Logo">
 				</div>

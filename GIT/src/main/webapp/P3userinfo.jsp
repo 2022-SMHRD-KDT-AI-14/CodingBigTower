@@ -192,17 +192,17 @@
 								<h3 class="title">회원 정보 변경</h3>
 							</div>							
 							<div class="form-group">
-								<input class="input" type="text" name="pw" placeholder="Password">
+								<input class="input" type="text" name="pw" placeholder="수정할 비밀번호를 입력해주세요.">
 							</div>
 							<div class="form-group">
-								<input class="input" type="text" name="Nname" placeholder="Nickname">
+								<input class="input" type="text" name="Nname" placeholder="수정할 닉네임을 입력해주세요.">
 							</div>											
 							<div class="form-group">
-								<input class="input" type="text" name="job" placeholder="Job">
+								<input class="input" type="text" name="job" placeholder="수정할 직업을 입력해주세요.">
 							</div>
-							<div class="form-group">
+							<!-- <div class="form-group">
 								<input class="input" type="tel" name="tel" placeholder="Telephone">
-							</div>
+							</div> -->
 							<div class="section-title"><br>
 								<h3 class="title">타이틀 변경</h3>
 							</div>

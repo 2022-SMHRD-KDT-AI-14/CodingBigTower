@@ -110,6 +110,8 @@ ul, ol {
   color: #FFF;
 }
 
+
+
 /*----------------------------*\
 	Inputs
 \*----------------------------*/
@@ -297,6 +299,7 @@ textarea.input {
   position: fixed;
   width: 70%;
   height: 90%;
+  margin-left: 30px;
 }
 
 .side-bar .container{
@@ -311,7 +314,7 @@ textarea.input {
 
 .section {
   padding-top: 30px;
-  padding-bottom: 80px;
+  padding-bottom:30px;
 }
 
 
@@ -526,6 +529,7 @@ textarea.input {
 .header-ctn {
   float: right;
   padding: 15px 0px;
+  width: auto;
 }
 
 .header-ctn>div {
@@ -785,13 +789,54 @@ textarea.input {
 
 .product .product-img {
   position: relative;
+  display: block;
+  overflow: hidden;
+  height: 200px;
+  width: auto;
 }
 
 .product .product-img>img {
   
   width: 100%;
   height: auto;
+
+  display: block; /* Otherwise it keeps some space around baseline */
+  min-width: 100%;    /* Scale up to fill container width */
+  min-height: 100%;   /* Scale up to fill container height */
+  -ms-interpolation-mode: bicubic; /* Scaled images look a bit better in IE now */
 }
+
+.user-profile {
+  position: relative;
+  margin: 15px 0px;
+  -webkit-box-shadow: 0px 0px 0px 0px #E4E7ED, 0px 0px 0px 1px #E4E7ED;
+  box-shadow: 0px 0px 0px 0px #E4E7ED, 0px 0px 0px 1px #E4E7ED;
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all;
+}
+
+.user-profile:hover {
+  -webkit-box-shadow: 0px 0px 6px 0px #E4E7ED, 0px 0px 0px 2px #D10024;
+  box-shadow: 0px 0px 6px 0px #E4E7ED, 0px 0px 0px 2px #D10024;
+}
+
+.user-profile .product-img {
+  position: relative;
+  margin-top: 10px;
+}
+
+.user-profile .product-img>img {
+  border-radius: 50%;
+  width: 90%;
+  height: auto;
+  margin: 20px;
+  margin-bottom: 20px;
+}
+
+.user-profile .product-body {
+  justify-content: center;
+}
+
 
 .product .product-body {
   position: relative;
@@ -822,6 +867,26 @@ textarea.input {
   color: #FFF;
 }
 
+.product-preview .product-label {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.product-preview .product-label>span {
+  border: 2px solid;
+  padding: 2px 10px;
+  font-size: 12px;
+}
+
+
+
+.product-preview .product-label>span.new {
+  background-color: #D10024;
+  border-color: #D10024;
+  color: #FFF;
+}
+
 .product .product-body {
   position: relative;
   padding: 15px;
@@ -843,6 +908,27 @@ textarea.input {
 .product .product-body .cafe-name>a:hover, .product .product-body .cafe-name>a:focus {
   color: #D10024;
 }
+
+.user-profile .product-body .cafe-name {
+  text-transform: uppercase;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+
+
+.user-profile .product-body .cafe-name>a:hover, .product .product-body .cafe-name>a:focus {
+  color: #D10024;
+}
+
+.user-profile .product-body .username {
+  color: black;
+  font-size: 18px;
+  justify-content: center;
+  text-align: center;
+}
+
+
 
 .product .product-body .username {
   color: black;
@@ -873,7 +959,6 @@ textarea.input {
 .product .product-body .cafe-rating>i.fa-star {
   color: #ef233c;
 }
-
 
 
 .product .product-body .product-btns>button {
@@ -914,22 +999,77 @@ textarea.input {
   transition: 0.2s all;
 }
 
-.Cafe-info dt{
-  overflow: hidden;
-  font-size: 15px;
+.table-description{
+  border-collapse: separate;
+  border-spacing: 5px 5px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
-.Cafe-info > dd{
-  width: 150px;
-  font-size: 16px;
-  letter-spacing: -0.7px;
+
+.custom-btn {
+  width: 130px;
+  height: 40px;
+  padding: 10px 25px;
+  border: 2px solid #000;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
 }
 
-.Cafe-info > dd{
-  float: left;
-  padding: 25px 0;
-  color: #333;
+.tg-01{
+  width: 20%x;
+  height: 60px;
+  text-align: left;
+  background-color: #fffdfd;
+  font-weight: bold;
+  margin-bottom: 2px;
+  padding-left: 10px;  
 }
+
+.table-description2{
+  width: auto;
+  border-collapse: separate;
+  border-spacing: 5px 5px; 
+  justify-content: center;
+  border-spacing: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.th-01-01{
+  font-weight: bolder;
+  text-align: center;
+  font-size: 22px;
+}
+
+
+
+.tg-03{
+  padding-left: 10px;
+  width: 70%;
+}
+
+
+.tg-04{
+  width: 20%x;
+  height: 60px;
+  text-align: left;
+  font-weight: bold;
+  margin-bottom: 2px;
+  padding-left: 10px;  
+}
+
+.tg-02{
+  padding-left: 10px;
+  width: 70%;
+}
+
 .product .product-body .product-btns>button:hover .tooltipp {
   opacity: 1;
   visibility: visible;
@@ -1018,7 +1158,10 @@ textarea.input {
 }
 
 .product-widget .product-img>img {
-  width: 100%;
+  position: absolute;
+width: 100%;
+height: 100%;
+object-fit: cover;
   
 }
 
@@ -1069,9 +1212,35 @@ textarea.input {
   color: #D10024;
 }
 
-.product-widget .product-body .username {
+.product-widget .user-profile .cafe-name {
+  text-transform: uppercase;
+  font-size: 12px;
+  justify-self: center;
+
+}
+
+.product-widget .user-profile .cafe-name>a {
+  font-weight: 700;
+}
+
+.product-widget .user-profile .cafe-name>a:hover, .user-profile .product-body .cafe-name>a:focus {
+  color: #D10024;
+}
+
+.user-profile .product-body {
+  display: grid;
+  grid-template-rows: 5% 45% 5% 45%  ;
+}
+
+.product-widget .user-profile .username {
   font-size: 14px;
   color: black;
+}
+
+.user-profile .user-profile .username {
+  font-size: 14px;
+  color: black;
+  justify-self: center;
 }
 
 .product-widget .delete {
@@ -1367,7 +1536,7 @@ textarea.input {
 }
 
 #product-imgs .product-preview.slick-current {
-  border-color: #D10024;
+  border: 2px solid black;
 }
 
 #product-imgs .slick-prev {
@@ -1404,7 +1573,9 @@ textarea.input {
 
 .product-details .cafe-name {
   text-transform: uppercase;
-  font-size: 18px;
+  font-size: 36px;
+  font-weight: bolder;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .product-details .cafe-rating {
@@ -1427,10 +1598,23 @@ textarea.input {
 
 .product-details .username {
   display: inline-block;
-  font-size: 24px;
+  font-size: 22px;
   margin-top: 10px;
   margin-bottom: 15px;
   color: black;
+}
+
+.product-details .username .user-title {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #8D99AE;
+  margin-top: 3px;
+  margin-left: 2px;
+}
+
+.post-content-text{
+  white-space: pre-line;
+  font-size: 15px;
 }
 
 .product-details .add-to-cart {
@@ -1492,7 +1676,9 @@ textarea.input {
 .product-details .product-btns li {
   display: inline-block;
   text-transform: uppercase;
-  font-size: 12px;
+  font-size: 11px;
+  margin-top: 12px;
+  
 }
 
 .product-details .product-btns li+li {
@@ -1500,17 +1686,29 @@ textarea.input {
 }
 
 .product-details .product-links {
-  margin-top: 15px;
+  margin-top: 15px;  
+    
 }
 
 .product-details .product-links li {
   display: inline-block;
   text-transform: uppercase;
   font-size: 12px;
+  
 }
+
+.product-details .product-links li i {
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 16px;
+  
+}
+
+
 
 .product-details .product-links li+li {
   margin-left: 10px;
+  
 }
 
 /*----------------------------*\
@@ -1576,7 +1774,7 @@ textarea.input {
 /*-- Rating --*/
 
 .rating-avg {
-  font-size: 24px;
+  font-size: 18px;
   font-weight: 700;
   margin-bottom: 15px;
 }
@@ -1649,23 +1847,28 @@ textarea.input {
 .reviews .review-heading .name {
   margin-bottom: 5px;
   margin-top: 0px;
+  text-align: center;
 }
 
 .reviews .review-heading .date {
   color: #8D99AE;
   font-size: 10px;
   margin: 0;
+  text-align: center;
+
 }
 
-.reviews .review-heading .review-rating {
+.reviews .review-heading .cafe-rating {
   margin-top: 5px;
+  text-align: center;
+
 }
 
-.reviews .review-heading .review-rating>i {
+.reviews .review-heading .cafe-rating>i {
   color: #E4E7ED;
 }
 
-.reviews .review-heading .review-rating>i.fa-star {
+.reviews .review-heading .cafe-rating>i.fa-star {
   color: #D10024;
 }
 
@@ -1745,7 +1948,7 @@ textarea.input {
 }
 
 /*=========================================================
-	09 -> CHECKOUT PAGE
+	09 -> userinfo
 ===========================================================*/
 
 .billing-details {
@@ -1777,6 +1980,84 @@ textarea.input {
   border-right: 1px solid #E4E7ED;
 }
 
+.billing-details form .input-select {
+  margin-right: -4px;
+  border-radius: 40px 40px 40px 40px;
+}
+
+
+.user-info-pic{
+  display :inline-block;
+}
+
+.image-upload {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.user-info-1 {
+  display: flex;
+  justify-content: center;
+}
+
+.filebox-box{
+  width: auto;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(27%, 0%);
+}
+
+.filebox input[type="file"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: 3px;
+  overflow: hidden;
+  clip:rect(0,0,0,0);
+  border: 0;
+}
+
+.filebox label {
+  display: inline-block;
+  padding: .5em .75em;
+  color: #999;
+  font-size: inherit;
+  line-height: normal;
+  vertical-align: middle;
+  background-color: #fdfdfd;
+  cursor: pointer;
+  border: 1px solid #ebebeb;
+  border-bottom-color: #e2e2e2;
+  border-radius: .25em;
+}
+
+/* named upload */
+.filebox .upload-name {
+  display: inline-block;
+  padding: .5em .75em;  /* label의 패딩값과 일치 */
+  font-size: inherit;
+  font-family: inherit;
+  line-height: normal;
+  vertical-align: middle;
+  background-color: #f5f5f5;
+  border: 1px solid #ebebeb;
+  border-bottom-color: #e2e2e2;
+  border-radius: .25em;
+  -webkit-appearance: none; /* 네이티브 외형 감추기 */
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.rounded-pill{
+  border-radius: 20px;
+  height: 30px;
+}
 
 /*=========================================================
 	10 -> NEWSLETTER
