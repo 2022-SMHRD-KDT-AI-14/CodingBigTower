@@ -17,6 +17,7 @@
 <%
 String email = (String) request.getAttribute("email");
 String nick = (String) request.getAttribute("nick");
+
 %>
 <body>
 

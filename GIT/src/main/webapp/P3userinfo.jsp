@@ -1,6 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+<%@page import="com.smhrd.model.Member"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8"%> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
@@ -30,13 +30,6 @@
 		<link type="text/css" rel="stylesheet" href="assets/css/style2.css"/>
 
 
-		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-		<!--[if lt IE 9]>
-		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-		<![endif]-->
-
     </head>
 	<body>
 		<!-- HEADER -->
@@ -44,13 +37,12 @@
 			<!-- TOP HEADER -->
 			<div id="top-header">
 				<div class="container">
+				<!-- 상단바 왼쪽 공간 -->
 					<ul class="header-links pull-left">
-						<li><a href="#"><i class="fa fa-phone"></i> 062-655-1616</a></li>
-						<li><a href="#"><i class="fa fa-envelope-o"></i> cfy0502@email.com</a></li>
-						<li><a href="#"><i class="fa fa-map-marker"></i> 동구 예술길 31-15</a></li>
 					</ul>
+					<!-- 상단바 오른쪽 공간 -->
 					<ul class="header-links pull-right">						
-						<li><a href="#"><i class="fa fa-user-o"></i> My Account</a></li>
+						<li><a onclick="location.href='P3userinfo.jsp';" style="cursor:pointer"><i class="fa fa-user-o"></i> 내 정보</a></li>
 					</ul>
 				</div>
 			</div>
@@ -65,8 +57,8 @@
 						<!-- LOGO -->
 						<div class="col-md-3">
 							<div class="header-logo">
-								<a href="#" class="logo">
-									<img src="images/LogoL_nokki2 (1).png" alt="">
+								<a href="" class="logo">
+									<img src="images/LogoL_nokki2 (1).png" onclick="location.href='P1main.jsp';" alt="">
 								</a>
 							</div>
 						</div>
@@ -96,7 +88,7 @@
 									<a href="#">
 										<i class="fa-regular fa-heart"></i>
 										<!-- <i class="fa-solid fa-heart"></i> : 색깔 칠해진 하트 아이콘 -->
-										<span>My Bias</span>
+										<span>Like</span>
 										<div class="qty">+</div>
 									</a>
 								</div>
@@ -174,7 +166,7 @@
 					<div class="col-md-12">
 						<h3 class="breadcrumb-header">회원 정보 변경</h3>
 						<ul class="breadcrumb-tree">
-							<li><a href="#">Home</a></li>
+							<li><a onclick="location.href='P1main.jsp';" style="cursor:pointer">Home</a></li>
 							<!-- 홈 클릭시 메인화면으로 이동 -->
 							<li class="active">회원 정보 변경</li>
 						</ul>
@@ -211,7 +203,7 @@
 							<div class="form-group">
 								<input class="input" type="tel" name="tel" placeholder="Telephone">
 							</div>
-							<div class="section-title">
+							<div class="section-title"><br>
 								<h3 class="title">타이틀 변경</h3>
 							</div>
 							<form>
@@ -228,7 +220,7 @@
 									<input type="checkbox" id="create-account">
 									
 									<div class="caption">
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+										<!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p> -->
 										<input class="input" type="password" name="password" placeholder="Enter Your Password">
 									</div>
 								</div>
@@ -246,9 +238,9 @@
 
 						<!-- Order notes -->
 						<div class="자기소개">
-							<textarea class="input" placeholder="Order Notes"></textarea>
+							<textarea class="input" placeholder="자기소개를 입력해주세요."></textarea>
 						</div>
-						<a href="#" class="primary-btn order-submit">개인 정보 변경</a>
+						<br><br><br><a href="#" class="primary-btn order-submit">개인 정보 변경</a>
 						<!-- /Order notes -->
 					</div>
 
@@ -288,7 +280,7 @@
 						<div class="col-md-3 col-xs-6">
 							<div class="footer">
 								<h3 class="footer-title">About Us</h3>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.</p>
+								<!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.</p> -->
 								<ul class="footer-links">
 									<li><a href="#"><i class="fa fa-phone"></i> 062-655-1616</a></li>
 						<li><a href="#"><i class="fa fa-envelope-o"></i> cfy0502@email.com</a></li>

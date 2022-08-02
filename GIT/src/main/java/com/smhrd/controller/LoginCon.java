@@ -15,9 +15,11 @@ import com.smhrd.model.MemberDAO;
 public class LoginCon extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	protected void service(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+		request.setCharacterEncoding("UTF-8");
+		
+		HttpSession session = request.getSession();
 		String email = request.getParameter("email");
 		String pw = request.getParameter("pw");
 
@@ -29,9 +31,8 @@ public class LoginCon extends HttpServlet {
 
 		if (loginMember != null) {
 			System.out.println("로그인 성공");
-			HttpSession session = request.getSession();
 			session.setAttribute("loginMember", loginMember);
-			response.sendRedirect("P1main.html");
+			response.sendRedirect("P1main.jsp");
 		} else {
 			System.out.println("로그인 실패");
 			response.sendRedirect("main.jsp");
