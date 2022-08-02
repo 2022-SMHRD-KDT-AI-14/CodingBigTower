@@ -1,3 +1,5 @@
+<%@page import="java.util.List"%>
+<%@page import="com.smhrd.model.PostDAO"%>
 <%@page import="com.smhrd.model.Member"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -44,6 +46,16 @@
 Member loginMember = (Member)session.getAttribute("loginMember");%>
 
 <body>
+	<%
+		
+		Member loginMember = (Member)session.getAttribute("loginMember");
+		String emil = loginMember.getEmail();
+		PostDAO dao = new PostDAO();
+		List<Integer> list = dao.selectAllLikePost(like);
+	
+	%>
+
+
 	<!-- HEADER -->
 	<header>
 		<!-- TOP HEADER -->

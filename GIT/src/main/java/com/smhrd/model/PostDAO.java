@@ -1,5 +1,8 @@
 package com.smhrd.model;
 
+import java.math.BigDecimal;
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
@@ -28,6 +31,20 @@ public class PostDAO {
 		}
 		return cnt;
 
+	}
+	public List<Integer> selectAllLikePost(BigDecimal like){
+		
+		List<Integer> list = null;
+		try {
+			list = sqlSession.selectList("com.smhrd.model.PostDAO.selectAllLikePost", like);
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			sqlSession.close();
+		}
+		return list;
+				
 	}
 
 }
