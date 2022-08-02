@@ -6,5 +6,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<insert id="insertPost" parameterType="com.smhrd.model.PostDAO">
 		insert into C_POST values (post_seq.nextval, #{title}, #{content}, #{filename}, sysdate, #{userID}, #{cafe_num}, 0)
 	</insert>
+	<select id="selectAllLikePost" parameterType="Integer" >
+		select post_seq from c_like where u_email = #{u_email} 
+	</select>
 	
 </mapper>        
