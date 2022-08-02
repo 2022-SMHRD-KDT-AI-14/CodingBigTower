@@ -19,8 +19,17 @@ public class Post {
 	@NonNull
 	private String content;
 	@NonNull
-	private String filename ;
+	private String filename1 ;
+	@NonNull
+	private String filename2 ;
+	@NonNull
+	private String filename3 ;
+	@NonNull
+	private String filename4 ;
+	@NonNull
+	private String filename5 ;
 	private Timestamp uploadday;
+	@NonNull
 	private String userID;
 	private BigDecimal cafe_num;
 	private BigDecimal like;

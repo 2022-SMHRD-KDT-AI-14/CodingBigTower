@@ -14,6 +14,7 @@ import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 import com.smhrd.model.Member;
 import com.smhrd.model.Post;
+import com.smhrd.model.PostDAO;
 
 @WebServlet("/BoardWriteCon")
 public class PostWriteCon extends HttpServlet {
@@ -36,18 +37,28 @@ public class PostWriteCon extends HttpServlet {
 			//파일, 글 제목, 컨텐츠, 키워드
 			MultipartRequest multi =  new MultipartRequest(request, saveDir, maxSize, encoding, new DefaultFileRenamePolicy());
 			
-			String Nick = multi.getParameter("Nick");
-			String filename = URLEncoder.encode(multi.getFilesystemName("file1"));
-			String filename1 = URLEncoder.encode(multi.getFilesystemName("file2"));
-			String filename2 = URLEncoder.encode(multi.getFilesystemName("file3"));
-			String filename3 = URLEncoder.encode(multi.getFilesystemName("file4"));
-			String filename4 = URLEncoder.encode(multi.getFilesystemName("file5"));			
+			
+			String title = multi.getParameter("title");
+			String userid = multi.getParameter("userID");
+			String filename1 = URLEncoder.encode(multi.getFilesystemName("file1"),"UTF-8");
+			String filename2 = URLEncoder.encode(multi.getFilesystemName("file2"),"UTF-8");
+			String filename3 = URLEncoder.encode(multi.getFilesystemName("file3"),"UTF-8");
+			String filename4 = URLEncoder.encode(multi.getFilesystemName("file4"),"UTF-8");
+			String filename5 = URLEncoder.encode(multi.getFilesystemName("file5"),"UTF-8");			
 			String content =multi.getParameter("content");
 			String keyword =multi.getParameter("keyword");
+			
 				
-			Post postVO = new Post(title,content,filename);
+			Post postVO = new Post(title,userid,content,filename1,filename2,filename3,filename4,filename5);
 			PostDAO dao = new PostDAO();
-			dao.insertPost(postVO);
+			int cnt =dao.insertPost(postVO);
+			if(cnt>0) {
+				System.out.print("완료");
+			}else {
+				System.out.print("실패");				
+			}
+			
+			
 			
 ;	}
 

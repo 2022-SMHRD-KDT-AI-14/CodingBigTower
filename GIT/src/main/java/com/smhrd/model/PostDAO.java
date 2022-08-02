@@ -14,7 +14,7 @@ public class PostDAO {
 
 		int cnt = 0;
 		try {
-			cnt = sqlSession.insert("com.smhrd.model.BoardDAO.insertBoard", vo);
+			cnt = sqlSession.insert("com.smhrd.model.PostDAO.insertPost", vo);
 			if (cnt > 0) {
 				sqlSession.commit();
 			} else {
