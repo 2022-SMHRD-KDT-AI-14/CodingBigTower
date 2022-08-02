@@ -320,7 +320,9 @@
 										</div>
 										<div class="product-btns">
 									<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
+									<form action="bookmarkCon" method="get">
 									<button class="add-to-compare"><i class="fa-regular fa-bookmark"></i><span class="tooltipp">add to compare</span></button>
+									</form>
 								</div>
 									</div>
 									<div class="add-to-cart">
