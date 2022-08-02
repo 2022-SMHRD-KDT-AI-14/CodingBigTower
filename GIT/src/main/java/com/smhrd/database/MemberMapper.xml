@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smhrd.model.MemberDAO">
+	<insert id="insert" parameterType="com.smhrd.model.Member">
+		insert into web_member2 values (#{email}, #{pw}, #{gender}, #{nick}, #{job}, null)
+	</insert>
+	<update id="update" parameterType="com.smhrd.model.Member">
+		update web_member2 set key=#{key} where email=#{email} 
+	</update>
+	
+	 <select id="selectOne" parameterType="com.smhrd.model.Member" resultType="com.smhrd.model.Member">
+		select * from web_member2 where email=#{email} and pw=#{pw}
+	</select>
+	<!--<update id="updateMember" parameterType="com.smhrd.model.Member">
+		update web_member set pw=#{pw}, tel=#{tel}, address=#{address} where email=#{email}
+	</update>
+	<select id="selectAllMember" resultType="com.smhrd.model.Member">
+		select * from web_member where not(email='admin')
+	</select>
+	<delete id="deleteMember" parameterType="String">
+		delete from web_member where email=#{email} 
+	</delete> -->
+	
+	<select id="emailCheck" parameterType="String" resultType="boolean">
+		select case when count(*)>0 then 1
+					else 0
+				end result
+		from web_member2 where email=#{email}
+					
+	</select>
+</mapper>        
