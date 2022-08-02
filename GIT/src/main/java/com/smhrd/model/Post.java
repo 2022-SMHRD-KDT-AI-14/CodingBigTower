@@ -19,6 +19,14 @@ public class Post {
 	@NonNull
 	private String content;
 	@NonNull
+	private String keyword;
+	
+	private Timestamp uploadday;
+	@NonNull
+	private String userID;
+	private BigDecimal cafe_num;
+	private BigDecimal like;
+	@NonNull
 	private String filename1 ;
 	@NonNull
 	private String filename2 ;
@@ -28,10 +36,4 @@ public class Post {
 	private String filename4 ;
 	@NonNull
 	private String filename5 ;
-	private Timestamp uploadday;
-	@NonNull
-	private String userID;
-	private BigDecimal cafe_num;
-	private BigDecimal like;
-	
 }
