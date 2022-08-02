@@ -22,10 +22,12 @@ public class PostWriteCon extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//세션 - 닉네임, 칭호 꺼내오기
-		
-			HttpSession session = request.getSession();
-			Member vo = (Member)session.getAttribute("loginMember");
-			String id = vo.getNick();
+		request.setCharacterEncoding("UTF-8");
+			
+//		//세션 - id
+//		HttpSession session = request.getSession();
+//		Member vo = (Member)session.getAttribute("loginVO");
+//		String id = vo.getId();
 			
 			//파일이 저장될 서버의 경로
 			String saveDir = request.getServletContext().getRealPath("img");			//파일의 최대크기 20MB
@@ -40,16 +42,16 @@ public class PostWriteCon extends HttpServlet {
 			
 			String title = multi.getParameter("title");
 			String userid = multi.getParameter("userID");
+			String content =multi.getParameter("content");
+			String keyword = multi.getParameter("keyword");
 			String filename1 = URLEncoder.encode(multi.getFilesystemName("file1"),"UTF-8");
 			String filename2 = URLEncoder.encode(multi.getFilesystemName("file2"),"UTF-8");
 			String filename3 = URLEncoder.encode(multi.getFilesystemName("file3"),"UTF-8");
 			String filename4 = URLEncoder.encode(multi.getFilesystemName("file4"),"UTF-8");
 			String filename5 = URLEncoder.encode(multi.getFilesystemName("file5"),"UTF-8");			
-			String content =multi.getParameter("content");
-			String keyword =multi.getParameter("keyword");
 			
 				
-			Post postVO = new Post(title,userid,content,filename1,filename2,filename3,filename4,filename5);
+			Post postVO = new Post(title,userid,content,keyword,filename1,filename2,filename3,filename4,filename5);
 			PostDAO dao = new PostDAO();
 			int cnt =dao.insertPost(postVO);
 			if(cnt>0) {

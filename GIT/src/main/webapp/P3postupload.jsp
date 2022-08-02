@@ -202,31 +202,31 @@
 							<div class="filebox">
 								<input class="upload-name" value="카페 외관 파일 선택" disabled="disabled">
 								<label for="ex_filename">업로드</label>
-								<input type="file" name="file1" id="ex_filename" class="upload-hidden">
+								<input type="file" name="file1" id="ex_filename" class="">
 							</div>
 						
 							<div class="filebox">
 								<input class="upload-name" value="카페 내부 파일 선택" disabled="disabled">
 								<label for="ex_filename">업로드</label>
-								<input type="file" name="file2" id="ex_filename" class="upload-hidden">
+								<input type="file" name="file2" id="ex_filename" class="">
 							</div>
 						
 							<div class="filebox">
 								<input class="upload-name" value="메뉴 파일 선택" disabled="disabled">
 								<label for="ex_filename">업로드</label>
-								<input type="file" name="file3" id="ex_filename" class="upload-hidden">
+								<input type="file" name="file3" id="ex_filename" class="">
 							</div>
 						
 							<div class="filebox">
 								<input class="upload-name" value="기타 사진" disabled="disabled">
 								<label for="ex_filename">업로드</label>
-								<input type="file"  name="file4" id="ex_filename" class="upload-hidden">
+								<input type="file"  name="file4" id="ex_filename" class="">
 							</div>
 						
 							<div class="filebox">
 								<input class="upload-name" value="기타 사진" disabled="disabled">
 								<label for="ex_filename">업로드</label>
-								<input type="file" name="file5" id="ex_filename" class="upload-hidden">
+								<input type="file" name="file5" id="ex_filename" class="">
 							</div>
 						</div>
 
@@ -255,7 +255,7 @@
 						<div class="post-hashtag">
 							<textarea class="input" placeholder="해시태그(#)를 입력해주세요."></textarea>
 						</div>
-						<button type="submit" value="게시물 작성"></button>
+						<button type="submit" value=""></button>
 						<!-- /Order notes -->
 						
 					</div>
