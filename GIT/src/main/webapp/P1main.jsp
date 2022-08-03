@@ -46,15 +46,6 @@
 Member loginMember = (Member)session.getAttribute("loginMember");%>
 
 <body>
-	<%
-		
-		Member loginMember = (Member)session.getAttribute("loginMember");
-		String emil = loginMember.getEmail();
-		PostDAO dao = new PostDAO();
-		List<Integer> list = dao.selectAllLikePost(like);
-	
-	%>
-
 
 	<!-- HEADER -->
 	<header>
