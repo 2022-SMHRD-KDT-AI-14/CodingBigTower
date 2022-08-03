@@ -411,7 +411,7 @@ String nick = (String) request.getAttribute("nick");
 				<p class="message">
 					계정이 없으신가요? <a class="rgmessage" onclick="register()">가입하기</a><br>
 				</p>
-				</p>
+				
 			</form>
 
 			<!-- 회원가입 폼 1-->
