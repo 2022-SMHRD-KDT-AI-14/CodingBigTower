@@ -47,12 +47,18 @@ Member loginMember = (Member)session.getAttribute("loginMember");%>
 
 <body>
 	<%
+<<<<<<< HEAD
 		
 		String emil = loginMember.getEmail();
 		PostDAO dao = new PostDAO();
 	 	// List<Integer> list = dao.selectAllLikePost(like);
 	
 	%> 
+=======
+
+	%>
+
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-AI-14/CodingBigTower.git
 
 	<!-- HEADER -->
 	<header>

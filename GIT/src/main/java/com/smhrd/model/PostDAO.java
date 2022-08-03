@@ -43,8 +43,22 @@ public class PostDAO {
 		}finally {
 			sqlSession.close();
 		}
-		return list;
-				
+		return list;				
+	}
+
+	
+public List<Post> selectAllPostlist(){
+		
+		List<Post> list = null;
+		try {
+			list = sqlSession.selectList("com.smhrd.model.PostDAO.selectAllPostlist");
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			sqlSession.close();
+		}
+		return list;				
 	}
 
 }
