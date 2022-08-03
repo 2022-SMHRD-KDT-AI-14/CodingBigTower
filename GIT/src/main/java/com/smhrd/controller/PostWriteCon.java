@@ -56,8 +56,10 @@ public class PostWriteCon extends HttpServlet {
 			int cnt =dao.insertPost(postVO);
 			if(cnt>0) {
 				System.out.print("완료");
+				response.sendRedirect("P4post.jsp");
 			}else {
-				System.out.print("실패");				
+				System.out.print("실패");
+				response.sendRedirect("P3postupload.jsp");
 			}
 			
 			
