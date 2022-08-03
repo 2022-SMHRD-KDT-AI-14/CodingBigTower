@@ -34,7 +34,7 @@ public class Member {
 	}
 
 
-	public Member(@NonNull String email, @NonNull String pw, String nick, String job, String gender, String titleSeq,
+	public Member( String email,  String pw, String nick, String job, String gender, String titleSeq,
 			String joindate) {
 		super();
 		this.email = email;
