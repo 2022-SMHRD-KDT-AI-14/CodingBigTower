@@ -1,6 +1,7 @@
 <%@page import="com.smhrd.model.Post"%>
 <%@page import="java.util.List"%>
 <%@page import="com.smhrd.model.PostDAO"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" isELIgnored="false"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -47,8 +48,16 @@
 		<![endif]-->
 
     </head>
+    <jsp:useBean id="PostDAO" class="com.smhrd.model.PostDAO"/>
+    <c:set var="Post" value="${PostDAO.selectOne(param.num)}"/>
+    <!-- url에 심어진 param을 가져온다 -->
 	<body>
-
+		<%
+		PostDAO dao = new PostDAO();
+		List<Post> list = dao.selectAllPostlist();
+		String nick = (String)request.getAttribute("nick");
+		String utitle = (String)request.getAttribute("title");
+	%>
 		<!-- HEADER -->
 		<header>
 			<!-- TOP HEADER -->
@@ -171,7 +180,7 @@
 			<!-- /MAIN HEADER -->
 		</header>
 		<!-- /HEADER -->
-
+<form>
 		<!-- BREADCRUMB -->
 		<div id="breadcrumb" class="section">
 			<!-- container -->
@@ -183,7 +192,7 @@
 							<li><a href="#">Home</a></li>
 							<li><a href="#">All Cafe</a></li>
 							<li><a href="#">데이트</a></li>
-							<li class="active">동명동 맛집 게더링</li>
+						<li class="active">${Post.title}</li> 
 						</ul>
 					</div>
 				</div>
@@ -206,7 +215,7 @@
 								<div class="product-label">
 									<span class="new">외부 사진</span>
 								</div>
-								<img src="https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20220414_258%2F1649924755278Vn3qy_JPEG%2FIMG_5975.jpg" alt="">
+								<img src="img/${Post.filename1}" alt="">
 
 							</div>
 
@@ -214,7 +223,7 @@
 								<div class="product-label">
 									<span class="new">내부 사진</span>
 								</div>
-								<img src="https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20220414_202%2F1649924754676LPwTl_JPEG%2FDSC00940.jpg" alt="">
+								<img src="img/${Post.filename2}" alt="">
 
 							</div>
 
@@ -222,12 +231,17 @@
 								<div class="product-label">
 									<span class="new">메인메뉴</span>
 								</div>
-								<img src="https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20220414_141%2F1649924755073vEWIB_JPEG%2FIMG_6065.jpg" alt="">
+								<img src="img/${Post.filename3}" alt="">
 
 							</div>
 
 								<div class="product-preview">
-									<img src="https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20220414_247%2F16499247554904FiaY_JPEG%2FIMG_6060.jpg" alt="">
+									<img src="img/${Post.filename4}" alt="">
+
+							</div>
+							
+								<div class="product-preview">
+									<img src="img/${Post.filename5}" alt="">
 
 							</div>
 
@@ -239,28 +253,31 @@
 					<div class="col-md-2  col-md-pull-5">
 						<div id="product-imgs">
 							<div class="product-preview">
-								<img src="https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20220414_258%2F1649924755278Vn3qy_JPEG%2FIMG_5975.jpg" alt="">
+								<img src="img/${Post.filename1}" alt="">
 								
 							</div>
 
 							<div class="product-preview">
-								<img src="https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20220414_202%2F1649924754676LPwTl_JPEG%2FDSC00940.jpg" alt="">
+								<img src="img/${Post.filename2}" alt="">
 								
 							
 							</div>
 
 							<div class="product-preview">
-								<img src="https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20220414_141%2F1649924755073vEWIB_JPEG%2FIMG_6065.jpg" alt="">
+								<img src="img/${Post.filename3}" alt="">
 								
 
 							</div>
 
 							<div class="product-preview">
-								<img src="https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20220414_247%2F16499247554904FiaY_JPEG%2FIMG_6060.jpg" alt="">
+								<img src="img/${Post.filename4}" alt="">
 
 							</div>
 
-							
+							<div class="product-preview">
+								<img src="img/${Post.filename5}" alt="">
+
+							</div>
 						</div>
 					</div>
 					<!-- /Product thumb imgs -->
@@ -268,7 +285,7 @@
 					<!-- Product details -->
 					<div class="col-md-5">
 						<div class="product-details">
-							<h2 class="cafe-name">Gathering</h2>
+							<h2 class="cafe-name">${Post.title}</h2>
 							<div>
 								<div class="cafe-rating">
 									네이버 평점 : 4.5<i class="fa fa-star"></i>
@@ -276,16 +293,12 @@
 								</div>
 							</div>
 							<div>
-								<h3 class="username">게더링 사장 아님<p class="user-title">게더링사장</p></h3>
+								<h3 class="username"><%=nick %><p class="user-title">게더링사장</p></h3>
 							</div>
 
 							<div>
 								<p class="post-content-text">
-								피자가 깔끔하고 카페가 맛있어여
-								laskdfjoaisdjfalksdfja;skd
-								fas'podfjsalkdfj;lkdsjf'asd
-								fasdpofjaslkdfjkasdf
-								asjdifjaskldfj;lksa
+								${Post.title}
 								</p>
 							</div>	
 
@@ -521,7 +534,7 @@
 															</div>
 														</div>
 														<div class="review-body">
-															<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+															<p></p>
 														</div>
 													</li>
 												</ul>
@@ -540,7 +553,7 @@
 										<div class="col-md-3">
 											<div id="review-form">
 												<form class="review-form">
-													<input class="input" type="text" placeholder="Your Name">
+													<input class="input" type="text" placeholder="<%=nick %>">
 													<input class="input" type="email" placeholder="Your Email">
 													<textarea class="input" placeholder="Your Review"></textarea>
 													<div class="input-rating">
@@ -553,7 +566,7 @@
 															<input id="star1" name="rating" value="1" type="radio"><label for="star1"></label>
 														</div>
 													</div>
-													<button class="primary-btn">Submit</button>
+													<button class="primary-btn" onclick="Comment()">Submit</button>
 												</form>
 											</div>
 										</div>
@@ -572,7 +585,7 @@
 			<!-- /container -->
 		</div>
 		<!-- /SECTION -->
-
+</form>
 		<!-- 최대 4개의 항복을 추가할것 -->
 		<!-- Section -->
 		<div class="section">
@@ -794,10 +807,9 @@
 		<script src="assets/js/nouislider.min.js"></script>
 		<script src="assets/js/jquery.zoom.min.js"></script>
 		<script src="assets/js/main.js"></script>
-
+		<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 		<img src="images/above_theapplication_thearrow_4431.png" alt="" id="topBtn">
-<!-- /TOPBTN -->
-
+<!-- TOPBTN -->
 		<script>
 			$(function() {            
 				$("#topBtn").click(function() {
@@ -808,6 +820,26 @@
 				});
 			  });		
 		</script>
-
+		<!-- /TOPBTN -->
+		<script>
+	function addComment(){
+		let ta = $('textarea').val()
+		$.ajax({
+			// 요청 경로
+			url : 'CommentCon',
+			// 요청 데이터 (게시물 번호, 작성댓글)
+			data : {'postnum' : ${param.num},'comment':ta},
+			// 요청 방식(get,post)
+			type : 'post',
+			success : function(data){
+				//alert(data) -> success / fail
+				$('#reply').prepend('<li class="list-group-item"><span>'+ta+'/${loginVO.id}</span></li>')
+			},
+			error : function() {
+				alert("통신 실패")
+			}
+		})
+	}
+</script>
 	</body>
 </html>
