@@ -22,12 +22,21 @@ public class LoginCon extends HttpServlet {
 		HttpSession session = request.getSession();
 		String email = request.getParameter("email");
 		String pw = request.getParameter("pw");
+		
+		System.out.println(email);
+		System.out.println(pw);
 
 		Member member = new Member(email, pw);
+		
+		System.out.println(member.getEmail());
+		System.out.println(member.getPw());
 
 		MemberDAO dao = new MemberDAO();
 
 		Member loginMember = dao.selectMember(member);
+		
+		System.out.println(loginMember.getEmail());
+		System.out.println(loginMember.getPw());
 
 		if (loginMember != null) {
 			System.out.println("로그인 성공");

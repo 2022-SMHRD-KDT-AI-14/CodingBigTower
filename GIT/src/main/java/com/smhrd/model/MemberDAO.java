@@ -37,6 +37,7 @@ public class MemberDAO {
 			// 실행
 			// insert("실행할 sql 정의")
 			loginMember = sqlSession.selectOne("com.smhrd.model.MemberDAO.selectOne", member);
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {

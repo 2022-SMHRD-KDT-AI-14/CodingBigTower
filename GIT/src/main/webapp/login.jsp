@@ -436,8 +436,8 @@ String nick = (String) request.getAttribute("nick");
 				<!-- 성별 -->
 				<tr align="center" type="gender" class="input-field">
 					<td align="center">성별 :</td>
-					<td align="center">남 <input type="radio" value="man"
-						name="gender"> 여 <input type="radio" value="women"
+					<td align="center">남 <input type="radio" value="M"
+						name="gender"> 여 <input type="radio" value="F"
 						name="gender"></td>
 				</tr>
 				<br>
