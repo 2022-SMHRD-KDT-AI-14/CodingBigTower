@@ -222,7 +222,7 @@
 
 					<!-- Order notes -->
 					<div class="자기소개">
-						<textarea class="input" placeholder="자기소개를 입력해주세요."></textarea>
+					<input name="int" class="input" placeholder="자기소개를 입력해주세요." type="textarea" value="<%-- <%=loginMember.getIntr() %> --%>">
 					</div>
 					<br>
 					<br>
@@ -325,21 +325,21 @@
 		<!-- /container -->
 	</div>
 	<!-- /top footer --> <!-- bottom footer -->
-	<div id="bottom-footer" class="section">
+	<!-- <div id="bottom-footer" class="section">
 		<div class="container">
-			<!-- row -->
+			row
 			<div class="row">
 				<div class="col-md-12 text-center">
-					<span class="copyright"> <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+					<span class="copyright"> Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
 						Copyright &copy;<script>document.write(new Date().getFullYear());</script>
 						All rights reserved | This template is made with <i
 						class="fa fa-heart-o" aria-hidden="true"></i> by <a
-						href="https://colorlib.com" target="_blank">Colorlib</a> <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+						href="https://colorlib.com" target="_blank">Colorlib</a> Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
 					</span>
 				</div>
 			</div>
-			<!-- /row -->
-		</div>
+			/row
+		</div> -->
 		<!-- /container -->
 	</div>
 	<!-- /bottom footer --> </footer>

@@ -445,8 +445,8 @@ textarea.input {
 #top-header {
   padding-top: 10px;
   padding-bottom: 10px;
-  background-color: #1E1F29;
-}
+  background-color: #d0b78e;
+}	
 
 .header-links li {
   display: inline-block;
@@ -478,7 +478,7 @@ textarea.input {
 #header {
   padding-top: 15px;
   padding-bottom: 15px;
-  background-color: #15161D;
+  background-color: #d0b78e;
 }
 
 .header-logo {
@@ -2149,12 +2149,12 @@ object-fit: cover;
 ===========================================================*/
 
 #footer {
-  background: #15161D;
+  background: #d0b78e;
   color: #B9BABC;
 }
 
 #bottom-footer {
-  background: #1E1F29;
+  background: #d0b78e;
 }
 
 .footer {
@@ -2173,12 +2173,12 @@ object-fit: cover;
 }
 
 .footer-links li a {
-  color: #B9BABC;
+  color: #fff;
 }
 
 .footer-links li i {
   margin-right: 15px;
-  color: #D10024;
+  color: rgb(0, 0, 0);
   width: 14px;
   text-align: center;
 }
