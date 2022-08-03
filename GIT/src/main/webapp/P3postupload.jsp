@@ -1,5 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@page import="com.smhrd.model.Post"%>
+<%@page import="java.util.List"%>
+<%@page import="com.smhrd.model.PostDAO"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" isELIgnored="false"%>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -8,7 +10,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-		<title>Electro - HTML Ecommerce Template</title>
+		<title>Coding Big Tower-Post Upload</title>
 
 		<!-- Google font -->
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
@@ -39,6 +41,11 @@
 
     </head>
 	<body>	
+	
+		<%
+		String nick = (String)request.getAttribute("nick");
+		String utitle = (String)request.getAttribute("title");
+	%>
 		<!-- HEADER -->
 		<header>
 			<!-- TOP HEADER -->
@@ -186,7 +193,7 @@
 		</div>
 		<!-- /BREADCRUMB -->
 
-<form action="BoardWriteCon" method="post" enctype="multipart/form-data">
+<form action="BoardWriteCon" method="post" enctype="multipart/form-data" accept-charset="UTF-8">
 		<!-- SECTION -->
 		<div class="section">
 			<!-- container -->
@@ -245,15 +252,15 @@
 
 						<!-- Order notes -->
 						<div class="mx-auto mt-5 search-bar input-group mb-3">
-							<input name="" type="text" class="rounded-pill" placeholder="카페 이름 입력" aria-label="Recipient's username" aria-describedby="button-addon2">
+							<input name="title" type="text" class="rounded-pill" placeholder="카페 이름 입력 및 제목 입력" aria-label="Recipient's username" aria-describedby="button-addon2">
 							<div class="input-group-append">
 							</div>
 						  </div>
 						<div class="post-content">
-							<textarea class="input" placeholder="내용을 입력해주세요."></textarea>
+							<textarea class="input" placeholder="내용을 입력해주세요." name="content"></textarea>
 						</div>
 						<div class="post-hashtag">
-							<textarea class="input" placeholder="해시태그(#)를 입력해주세요."></textarea>
+							<textarea class="input" placeholder="해시태그(#)를 입력해주세요." name="keyword"></textarea>
 						</div>
 						<button type="submit" value=""></button>
 						<!-- /Order notes -->

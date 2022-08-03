@@ -334,7 +334,7 @@
 								</div>
 									</div>
 									<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa-solid fa-magnifying-glass"></i> 자세히 보기</button>
+												<button class="add-to-cart-btn" onclick="window.open('P4post.jsp?num=<%=b.getNum() %>')"><i class="fa-solid fa-magnifying-glass"></i> 자세히 보기</button>
 							</div>
 								</div>
 							</div>
