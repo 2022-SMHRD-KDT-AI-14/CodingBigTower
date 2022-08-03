@@ -61,4 +61,21 @@ public List<Post> selectAllPostlist(){
 		return list;				
 	}
 
+public Post selectOne(int num) {
+	
+	Post PostVO = null;
+	
+	try {
+		PostVO = sqlSession.selectOne("com.smhrd.model.PostDAO.selectOne", num);
+		
+	}catch(Exception e) {
+		e.printStackTrace();
+		
+	}finally {
+		sqlSession.close();
+	}
+	return PostVO;
+	
+}
+
 }
