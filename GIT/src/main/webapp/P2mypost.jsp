@@ -1,5 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@page import="com.smhrd.model.Post"%>
+<%@page import="java.util.List"%>
+<%@page import="com.smhrd.model.PostDAO"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" isELIgnored="false"%>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -39,6 +41,13 @@
 
     </head>
 	<body>
+	
+	<%
+		PostDAO dao = new PostDAO();
+		List<Post> list = dao.selectAllPostlist();
+		String nick = (String)request.getAttribute("nick");
+		String utitle = (String)request.getAttribute("title");
+	%>
 		<!-- HEADER -->
 		<header>
 			<!-- TOP HEADER -->
@@ -221,7 +230,7 @@
 										</div>
 
 										<div class="product-body" >
-											<h4 class="username" >만득이<a class="user-title">브론즈</a></h4>
+											<h4 class="username" ><%= nick %><a class="user-title"><%= utitle %></a></h4>
 											<div></div>
 											<h3 class="cafe-name">브론즈에서 벗어날꺼야</h3>
 											<div></div>
@@ -304,16 +313,17 @@
 						
 						<!-- store products -->
 						<div class="row">
+	<%for(Post b:list) {%>					
 							<!-- product -->
 							<div class="col-md-4 col-xs-6">
 								<div class="product">
 									<div class="product-img">
-										<img src="https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20220414_202%2F1649924754676LPwTl_JPEG%2FDSC00940.jpg"
+										<img src="<%=b.getFilename1() %>"
 												alt="">
 									</div>
 									<div class="product-body">
-										<h3 class="cafe-name"><a href="#">Gethering</a></h3>
-											<h4 class="username">USERNAME <p class="user-title">유저타이틀</p>
+										<h3 class="cafe-name"><a href="#"><%=b.getTitle()%></a></h3>
+											<h4 class="username"><%= nick %> <p class="user-title"><%= utitle %></p>
 											</h4>
 										<div class="cafe-rating">
 											<a>4.5</a><i class="fa fa-star"></i>
@@ -324,271 +334,14 @@
 								</div>
 									</div>
 									<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa-solid fa-magnifying-glass"></i> 자세히 보기</button>
+												<button class="add-to-cart-btn" onclick="window.open('P4post.jsp?num=<%=b.getNum() %>')"><i class="fa-solid fa-magnifying-glass"></i> 자세히 보기</button>
 							</div>
 								</div>
 							</div>
 							<!-- /product -->
 
-							<!-- product -->
-							<div class="col-md-4 col-xs-6">
-								<div class="product">
-									<div class="product-img">
-										<img src="https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20220414_202%2F1649924754676LPwTl_JPEG%2FDSC00940.jpg"
-												alt="">
-									</div>
-									<div class="product-body">
-										<h3 class="cafe-name"><a href="#">cafe name goes here</a></h3>
-											<h4 class="username">USERNAME <p class="user-title">유저타이틀</p>
-											</h4>
-										<div class="cafe-rating">
-											<a>4.5</a><i class="fa fa-star"></i>
-										</div>
-										<div class="product-btns">
-									<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-									<button class="add-to-compare"><i class="fa-regular fa-bookmark"></i><span class="tooltipp">add to compare</span></button>
-								</div>
-									</div>
-									<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa-solid fa-magnifying-glass"></i> 자세히 보기</button>
-							</div>
-								</div>
-							</div>
-							<!-- /product -->
-
-							<!-- product -->
-							<div class="col-md-4 col-xs-6">
-								<div class="product">
-									<div class="product-img">
-										<img src="https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20220414_202%2F1649924754676LPwTl_JPEG%2FDSC00940.jpg"
-												alt="">
-									</div>
-									<div class="product-body">
-										<h3 class="cafe-name"><a href="#">cafe name goes here</a></h3>
-											<h4 class="username">USERNAME <p class="user-title">유저타이틀</p>
-											</h4>
-										<div class="cafe-rating">
-											<a>4.5</a><i class="fa fa-star"></i>
-										</div>
-										<div class="product-btns">
-									<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-									<button class="add-to-compare"><i class="fa-regular fa-bookmark"></i><span class="tooltipp">add to compare</span></button>
-								</div>
-									</div>
-									<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa-solid fa-magnifying-glass"></i> 자세히 보기</button>
-							</div>
-								</div>
-							</div>
-							<!-- /product -->
-
-							<!-- product -->
-							<div class="col-md-4 col-xs-6">
-								<div class="product">
-									<div class="product-img">
-										<img src="https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20220414_202%2F1649924754676LPwTl_JPEG%2FDSC00940.jpg"
-												alt="">
-									</div>
-									<div class="product-body">
-										<h3 class="cafe-name"><a href="#">cafe name goes here</a></h3>
-											<h4 class="username">USERNAME <p class="user-title">유저타이틀</p>
-											</h4>
-										<div class="cafe-rating">
-											<a>4.5</a><i class="fa fa-star"></i>
-										</div>
-										<div class="product-btns">
-									<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-									<button class="add-to-compare"><i class="fa-regular fa-bookmark"></i><span class="tooltipp">add to compare</span></button>
-								</div>
-									</div>
-									<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa-solid fa-magnifying-glass"></i> 자세히 보기</button>
-							</div>
-								</div>
-							</div>
-							<!-- /product -->
-
-							<!-- product -->
-							<div class="col-md-4 col-xs-6">
-								<div class="product">
-									<div class="product-img">
-										<img src="https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20220414_202%2F1649924754676LPwTl_JPEG%2FDSC00940.jpg"
-												alt="">
-									</div>
-									<div class="product-body">
-										<h3 class="cafe-name"><a href="#">cafe name goes here</a></h3>
-											<h4 class="username">USERNAME <p class="user-title">유저타이틀</p>
-											</h4>
-										<div class="cafe-rating">
-											<a>4.5</a><i class="fa fa-star"></i>
-										</div>
-										<div class="product-btns">
-									<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-									<button class="add-to-compare"><i class="fa-regular fa-bookmark"></i><span class="tooltipp">add to compare</span></button>
-								</div>
-									</div>
-									<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa-solid fa-magnifying-glass"></i> 자세히 보기</button>
-							</div>
-								</div>
-							</div>
-							<!-- /product -->
-
-							<!-- product -->
-							<div class="col-md-4 col-xs-6">
-								<div class="product">
-									<div class="product-img">
-										<img src="https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20220414_202%2F1649924754676LPwTl_JPEG%2FDSC00940.jpg"
-												alt="">
-									</div>
-									<div class="product-body">
-										<h3 class="cafe-name"><a href="#">cafe name goes here</a></h3>
-											<h4 class="username">USERNAME <p class="user-title">유저타이틀</p>
-											</h4>
-										<div class="cafe-rating">
-											<a>4.5</a><i class="fa fa-star"></i>
-										</div>
-										<div class="product-btns">
-									<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-									<button class="add-to-compare"><i class="fa-regular fa-bookmark"></i><span class="tooltipp">add to compare</span></button>
-								</div>
-									</div>
-									<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa-solid fa-magnifying-glass"></i> 자세히 보기</button>
-							</div>
-								</div>
-							</div>
-							<!-- /product -->
-
-							<!-- product -->
-							<div class="col-md-4 col-xs-6">
-								<div class="product">
-									<div class="product-img">
-										<img src="https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20220414_202%2F1649924754676LPwTl_JPEG%2FDSC00940.jpg"
-												alt="">
-									</div>
-									<div class="product-body">
-										<h3 class="cafe-name"><a href="#">cafe name goes here</a></h3>
-											<h4 class="username">USERNAME <p class="user-title">유저타이틀</p>
-											</h4>
-										<div class="cafe-rating">
-											<a>4.5</a><i class="fa fa-star"></i>
-										</div>
-										<div class="product-btns">
-									<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-									<button class="add-to-compare"><i class="fa-regular fa-bookmark"></i><span class="tooltipp">add to compare</span></button>
-								</div>
-									</div>
-									<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa-solid fa-magnifying-glass"></i> 자세히 보기</button>
-							</div>
-								</div>
-							</div>
-							<!-- /product -->
-
-							<!-- product -->
-							<div class="col-md-4 col-xs-6">
-								<div class="product">
-									<div class="product-img">
-										<img src="https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20220414_202%2F1649924754676LPwTl_JPEG%2FDSC00940.jpg"
-												alt="">
-									</div>
-									<div class="product-body">
-										<h3 class="cafe-name"><a href="#">cafe name goes here</a></h3>
-											<h4 class="username">USERNAME <p class="user-title">유저타이틀</p>
-											</h4>
-										<div class="cafe-rating">
-											<a>4.5</a><i class="fa fa-star"></i>
-										</div>
-										<div class="product-btns">
-									<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-									<button class="add-to-compare"><i class="fa-regular fa-bookmark"></i><span class="tooltipp">add to compare</span></button>
-								</div>
-									</div>
-									<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa-solid fa-magnifying-glass"></i> 자세히 보기</button>
-							</div>
-								</div>
-							</div>
-							<!-- /product -->
-
-							<!-- product -->
-							<div class="col-md-4 col-xs-6">
-								<div class="product">
-									<div class="product-img">
-										<img src="https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20220414_202%2F1649924754676LPwTl_JPEG%2FDSC00940.jpg"
-												alt="">
-									</div>
-									<div class="product-body">
-										<h3 class="cafe-name"><a href="#">cafe name goes here</a></h3>
-											<h4 class="username">USERNAME <p class="user-title">유저타이틀</p>
-											</h4>
-										<div class="cafe-rating">
-											<a>4.5</a><i class="fa fa-star"></i>
-										</div>
-										<div class="product-btns">
-									<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-									<button class="add-to-compare"><i class="fa-regular fa-bookmark"></i><span class="tooltipp">add to compare</span></button>
-								</div>
-									</div>
-									<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa-solid fa-magnifying-glass"></i> 자세히 보기</button>
-							</div>
-								</div>
-							</div>
-							<!-- /product -->
-
-							<!-- product -->
-							<div class="col-md-4 col-xs-6">
-								<div class="product">
-									<div class="product-img">
-										<img src="https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20220414_202%2F1649924754676LPwTl_JPEG%2FDSC00940.jpg"
-												alt="">
-									</div>
-									<div class="product-body">
-										<h3 class="cafe-name"><a href="#">cafe name goes here</a></h3>
-											<h4 class="username">USERNAME <p class="user-title">유저타이틀</p>
-											</h4>
-										<div class="cafe-rating">
-											<a>4.5</a><i class="fa fa-star"></i>
-										</div>
-										<div class="product-btns">
-									<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-									<button class="add-to-compare"><i class="fa-regular fa-bookmark"></i><span class="tooltipp">add to compare</span></button>
-								</div>
-									</div>
-									<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa-solid fa-magnifying-glass"></i> 자세히 보기</button>
-							</div>
-								</div>
-							</div>
-							<!-- /product -->
-
-							<!-- product -->
-							<div class="col-md-4 col-xs-6">
-								<div class="product">
-									<div class="product-img">
-										<img src="https://search.pstatic.net/common/?autoRotate=true&type=w560_sharpen&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20220414_202%2F1649924754676LPwTl_JPEG%2FDSC00940.jpg"
-												alt="">
-									</div>
-									<div class="product-body">
-										<h3 class="cafe-name"><a href="#">cafe name goes here</a></h3>
-											<h4 class="username">USERNAME <p class="user-title">유저타이틀</p>
-											</h4>
-										<div class="cafe-rating">
-											<a>4.5</a><i class="fa fa-star"></i>
-										</div>
-										<div class="product-btns">
-									<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-									<button class="add-to-compare"><i class="fa-regular fa-bookmark"></i><span class="tooltipp">add to compare</span></button>
-								</div>
-									</div>
-									<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa-solid fa-magnifying-glass"></i> 자세히 보기</button>
-							</div>
-								</div>
-							</div>
-							<!-- /product -->
+							
+	<%} %>							
 						</div>
 						<!-- /store products -->
 

@@ -23,7 +23,7 @@ public class Post {
 	
 	private Timestamp uploadday;
 	@NonNull
-	private String userID;
+	private String nick;
 	private BigDecimal cafe_num;
 	private BigDecimal like;
 	@NonNull

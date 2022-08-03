@@ -24,10 +24,10 @@ public class PostWriteCon extends HttpServlet {
 		//세션 - 닉네임, 칭호 꺼내오기
 		request.setCharacterEncoding("UTF-8");
 			
-//		//세션 - id
-//		HttpSession session = request.getSession();
-//		Member vo = (Member)session.getAttribute("loginVO");
-//		String id = vo.getId();
+		//세션 - id
+		HttpSession session = request.getSession();
+		Member vo = (Member)session.getAttribute("loginVO");
+		String nick = vo.getNick();
 			
 			//파일이 저장될 서버의 경로
 			String saveDir = request.getServletContext().getRealPath("img");			//파일의 최대크기 20MB
@@ -41,7 +41,6 @@ public class PostWriteCon extends HttpServlet {
 			
 			
 			String title = multi.getParameter("title");
-			String userid = multi.getParameter("userID");
 			String content =multi.getParameter("content");
 			String keyword = multi.getParameter("keyword");
 			String filename1 = URLEncoder.encode(multi.getFilesystemName("file1"),"UTF-8");
@@ -51,7 +50,7 @@ public class PostWriteCon extends HttpServlet {
 			String filename5 = URLEncoder.encode(multi.getFilesystemName("file5"),"UTF-8");			
 			
 				
-			Post postVO = new Post(title,userid,content,keyword,filename1,filename2,filename3,filename4,filename5);
+			Post postVO = new Post(title,nick,content,keyword,filename1,filename2,filename3,filename4,filename5);
 			PostDAO dao = new PostDAO();
 			int cnt =dao.insertPost(postVO);
 			if(cnt>0) {
