@@ -47,9 +47,18 @@ Member loginMember = (Member)session.getAttribute("loginMember");%>
 
 <body>
 	<%
+<<<<<<< HEAD
+		
+		String emil = loginMember.getEmail();
+		PostDAO dao = new PostDAO();
+	 	// List<Integer> list = dao.selectAllLikePost(like);
+	
+	%> 
+=======
 
 	%>
 
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-AI-14/CodingBigTower.git
 
 	<!-- HEADER -->
 	<header>
@@ -64,14 +73,14 @@ Member loginMember = (Member)session.getAttribute("loginMember");%>
 				</ul> -->
 				
 				<ul class="header-links pull-right">
-					<li><a onclick="location.href='P3userinfo.jsp';" style="cursor:pointer"> My Account <i class="fa fa-user-o"></i></a></li>
+					<li &nbsp;><a onclick="location.href='P3userinfo.jsp';" style="cursor:pointer"> My Account <i class="fa fa-user-o" ></i></a></li &nbsp; >
 				</ul>
 				
 				<ul class="header-links pull-right">
-					<li><a onclick="location.href='login.jsp';" style="cursor:pointer"><i class=""  &nbsp;></i> logout </a></li &nbsp;>
+					<li &nbsp;><a onclick="location.href='login.jsp';" style="cursor:pointer"><i class=""  &nbsp;></i> logout </a></li &nbsp;>
 				
 				<ul class="header-links pull-right">
-					<li &nbsp;><a onclick="location.href='P3postupload.jsp';" style="cursor:pointer"><i class=""></i> Post+ </a></li>
+					<li &nbsp;><a onclick="location.href='P3postupload.jsp';" style="cursor:pointer"><i class=""></i> Post+ </a></li &nbsp;>
 				</ul>
 				
 				</ul>
