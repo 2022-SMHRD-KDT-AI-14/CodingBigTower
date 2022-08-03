@@ -10,8 +10,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select post_seq from c_like where u_email = #{u_email} 
 	</select>	
 	
-	<select id="selectAllPostlist" resultType="com.smhrd.model.PostDAO">
+	<select id="selectAllPostlist" resultType="com.smhrd.model.Post">
 		select * from C_POST
+	</select>
+	
+	<select id="selectOne" parameterType="int" resultType="com.smhrd.model.Post">
+		select * from C_POST where POST_SEQ=#{num}
 	</select>
 	
 </mapper>        
